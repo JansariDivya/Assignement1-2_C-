@@ -50,24 +50,32 @@ int main()
 {
 
 Student std[3];
-StudentDerived *ptrderived = (Student *)&std; //pointer of the derived class accessing the base class object
+Student *ptr =std;
+StudentDerived *ptrderived =&std; //pointer of the derived class accessing the base class object
 int i;
 
 
 // Accessing the function
 for(i = 0; i < 3; i++)
 {
-	*ptrderived->getdata(); //derivedclass object accessing the member function of the base class
-	*ptrderived++;
+	ptr->getdata();
+	ptr++;
+	//derivedclass object accessing the member function of the base class
+	//*ptrderived->getdata(); //throws error as derived class cannot access base class objects
+	//*ptrderived++;              
 }
 cout << "Employee Data - " << endl;
 
 ptr=std;
 // Accessing the function
 for(i = 0; i < 3; i++)
-{
-	*ptrderived->putdata(); //derivedclass object accessing the member function of the base class
-	*ptrderived++;
+{       
+	ptr->putdata();
+	ptr++;
+	
+	//derivedclass object accessing the member function of the base class
+	//*ptrderived->putdata(); //throws error as derived class cannot access base class objects
+	//*ptrderived++;
 }
 }
 
