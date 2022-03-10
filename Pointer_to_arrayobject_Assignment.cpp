@@ -1,5 +1,6 @@
-// C++ program to implement
-// the above approach
+/* Problem:-  C++ program to  demonstrate the concept of pointer to class memeber of array of three objects.
+               and also Tried createing the pointer of the derived class and access the base class objects.*/
+
 #include<iostream>
 using namespace std;
 
@@ -16,10 +17,9 @@ void getdata();
 
 // Declaration of function
 void putdata();
-};
+};//end of the class Student
 
-// Defining the function outside
-// the class
+//Inputs the data of the student 
 void Student::getdata()
 {
 cout << "Enter Id : ";
@@ -30,8 +30,7 @@ cout<< "ENter the Marks: ";
 cin>>marks;
 }
 
-// Defining the function outside
-// the class
+//Displays the data of the Student
 void Student::putdata()
 {
 cout << id << " ";
@@ -40,6 +39,7 @@ cout << marks << " ";
 cout << endl;
 }
 
+//derived class
 class StudentDerived : public Student
 {
 	cout<<" This is Derived class";
@@ -50,19 +50,15 @@ int main()
 {
 
 Student std[3];
-//StudentDerived stdderived[3];
-Student *ptr = std;
-StudentDerived *ptrderived = stdderived;
+StudentDerived *ptrderived = (Student *)&std; //pointer of the derived class accessing the base class object
 int i;
 
 
 // Accessing the function
 for(i = 0; i < 3; i++)
 {
-	ptr->getdata();
-	ptr++;
-	//*ptrderived->getdata();
-	//*ptrderived++;
+	*ptrderived->getdata(); //derivedclass object accessing the member function of the base class
+	*ptrderived++;
 }
 cout << "Employee Data - " << endl;
 
@@ -70,10 +66,8 @@ ptr=std;
 // Accessing the function
 for(i = 0; i < 3; i++)
 {
-	ptr->putdata();
-	ptr++;
-	//*ptrderived->putdata();
-	//*ptrderived++;
+	*ptrderived->putdata(); //derivedclass object accessing the member function of the base class
+	*ptrderived++;
 }
 }
 
