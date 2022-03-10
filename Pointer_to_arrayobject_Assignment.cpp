@@ -40,13 +40,19 @@ cout << marks << " ";
 cout << endl;
 }
 
+class StudentDerived : public Student
+{
+	cout<<" This is Derived class";
+}
+
 // Driver code
 int main()
 {
 
 Student std[3];
-
+//StudentDerived stdderived[3];
 Student *ptr = std;
+StudentDerived *ptrderived = stdderived;
 int i;
 
 
@@ -55,6 +61,8 @@ for(i = 0; i < 3; i++)
 {
 	ptr->getdata();
 	ptr++;
+	//*ptrderived->getdata();
+	//*ptrderived++;
 }
 cout << "Employee Data - " << endl;
 
@@ -64,6 +72,8 @@ for(i = 0; i < 3; i++)
 {
 	ptr->putdata();
 	ptr++;
+	//*ptrderived->putdata();
+	//*ptrderived++;
 }
 }
 
