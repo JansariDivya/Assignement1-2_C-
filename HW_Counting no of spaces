@@ -1,0 +1,41 @@
+/*C++ program to count the no of spaces in agiven file*/
+
+#include<iostream>
+#include<fstream>
+#include<string.h>
+
+using namespace std;
+
+int main()
+{
+  char line[80],fname[25];
+  int len,i,space=0;
+  cout<<"Enter the filename"<<endl;
+  cin>>fname;
+  ifstream fin;
+  if(!fin)
+  {
+    cout<<fname<<"file doesnot exist...\n";
+    exit(0);
+    
+  }
+  cout<<"\nContents of "<<fname <<"file.....\n\n";
+  //Display contents of a file
+  while(fin.eof()==0)
+  {
+    //read from file
+    fin.getline(line,sizeof(line));
+    //Display line from a file
+    cout<<line<<"\n";
+    len=strlen(line);  //find string length of line
+    for(i=0;i<len;i++)
+    {
+      if(line[i]==' ') //check for space characters
+      ++space;// countno of spaces
+    }
+  }
+  
+  cout<<"\n \n No of spaces in a file ="<<space<<endl;
+  fin.close(); //close a file
+  return 0;
+}
