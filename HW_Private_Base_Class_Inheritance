@@ -1,0 +1,50 @@
+// Problem :- Accessing Private members of class Base by inheriting as a Private in the Derived Class
+
+
+
+class base
+{
+  
+  int i;
+  
+  public:
+  int j,k;
+  
+  void seti(int x)
+  {
+    i=x;
+  }
+  
+  int geti()
+  {
+    return i;
+  }
+  
+};
+
+//Derived Class and inherits Base class Private 
+
+class derived : private base
+{
+  base::j; // making j public
+  base::seti; // make seti() public
+  base::geti; //make geti() publlic
+  base::i; // illegal accessing i 
+  int a: 
+};
+
+int main()
+  {
+      derived ob;
+      ob.i=10; // error because i is private in derived
+      ob.j=20; 
+      ob.k=30; // error because k is private in derived
+      ob.a=40; 
+      
+      ob.seti(10); // accessing private member i through seti() 
+      
+      cout<< ob.geti() << " "<< ob.j <<" "<<ob.a;  // accessing private member i through geti() 
+      
+      return 0;
+      
+  }
