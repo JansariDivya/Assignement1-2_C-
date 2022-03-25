@@ -1,8 +1,8 @@
 
-// Problem :- Accessing Private members of class Base by inheriting as a Private in the Derived Class
+// Problem :- Accessing Private Members of Class Base by inheriting as a Private in the Derived Class
 
 
-class base
+class Base
 {
   
   int p;
@@ -24,7 +24,7 @@ class base
 
 //Derived Class and inherits Base class Private 
 
-class derived : private base
+class Derived : private Base
 {
   base::j; // making j public
   base::setp; // make seti() public
@@ -35,7 +35,7 @@ class derived : private base
 
 int main()
   {
-      derived ob;
+      Derived ob;
       ob.p=10; // error because i is private in derived
       ob.j=20; 
       ob.k=30; // error because k is private in derived
