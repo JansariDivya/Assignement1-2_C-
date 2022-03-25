@@ -1,3 +1,4 @@
+/*------------------------------Note: I have done FILE_NAME changed edited on 25-3-2022-------------------------------------------*/
 //Problem:- Performs Calculator operation in C++
 
 #include <iostream>
@@ -73,7 +74,7 @@ do
 cout<< "Enter the Two Numbers that you want to perform operations on:\n"<<endl;
 cout<< "Enter Number 1:-"<<endl;
 cin>>x;
-cout<<"Ënter Number 2:-"<<endl;
+cout<<"Ã‹nter Number 2:-"<<endl;
 cin>>y;
 cout << "What function do you want to use? " << endl;
 cout << "1 - Addition " << endl;
