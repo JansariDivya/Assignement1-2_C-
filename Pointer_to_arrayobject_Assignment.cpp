@@ -1,3 +1,6 @@
+
+/*-----------------------------------Note: I have done FILE_NAME changed edited on 25-3-2022----------------------------------------------------------------------*/
+
 /* Problem:-  C++ program to  demonstrate the concept of pointer to class memeber of array of three objects.
                and also Tried createing the pointer of the derived class and access the base class objects.*/
 
