@@ -1,0 +1,62 @@
+
+/*-------------------------------------------Note: I have done FILE_NAME changed edited on 25-3-2022-------------------------------------------------------------*/
+
+/*Problem :- Overloading New and Delete operator */
+
+#include<iostream>
+#include<stdlib.h>
+
+using namespace std;
+
+class student
+{
+   
+   string name;
+    int age;
+    
+    public:
+    
+    student()
+    {
+    cout<< "Constructor is called\n" ;
+    }
+    
+    //gets student details
+    student(string nam, int ag)
+    {
+    name = nam;
+    age = ag;
+    }
+    
+    //displays student info
+    void display()
+    {
+    cout<< "Name:" << name << endl;
+    cout<< "Age:" << age << endl;
+    }
+    
+    //overloading new operator
+    void * operator new(size_t size)
+    {
+    cout<< "Overloading new operator with size: " << size << endl;
+    void * p = ::operator new(size);
+    //void * p = malloc(size); will also work fine
+
+    return p;
+    }
+
+    //overloading delete operator
+    void operator delete(void * p)
+    {
+    cout<< "Overloading delete operator " << endl;
+    free(p);
+    }
+};
+
+int main()
+{
+     student * p = new student("Yash", 24); 
+
+    p->display();
+    delete p;
+}
